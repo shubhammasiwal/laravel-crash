@@ -1,10 +1,10 @@
 <div>
-    <h1>Counter: {{ $bird_count }}</h1>
+    <h1>How many birds have you seen: {{ $bird_count }}</h1>
     <button wire:click="increment">Increment</button>
     <button wire:click="decrement">Decrement</button>
     <form wire:submit="submit">
         <div>
-            <label for="bird_count">Bird:</label>
+            <label for="bird_count">Bird Count:</label>
             <input type="number" wire:model="bird_count">
         </div>
         <div>
@@ -13,6 +13,13 @@
         </div>
         <button type="submit">Submit</button>
     </form>
+    @if($errors->any())
+        <div style="color: red;">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
 
     <!-- show all the entries of bird count -->
     <table border="1" cellpadding="5" cellspacing="0">
