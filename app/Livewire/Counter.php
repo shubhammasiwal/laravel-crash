@@ -71,6 +71,13 @@ class Counter extends Component
         $this->notes = '';
     }
 
+    /**
+     * 
+     */
+    public function delete($id) {
+        Entry::findOrFail($id)->delete();
+    }
+
      /**
      * Render the Livewire component view.
      *

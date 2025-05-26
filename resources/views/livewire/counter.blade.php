@@ -28,14 +28,19 @@
                 <th>Bird Count</th>
                 <th>Note</th>
                 <th>Created At</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach($entries as $entry)
-                <tr>
+                <tr wire:key="entry-{{ $entry->id }}" wire:transition>
                     <td>{{ $entry->bird_count }}</td>
                     <td>{{ $entry->notes }}</td>
                     <td>{{ $entry->created_at }}</td>
+                    <td> 
+                        <button wire:click="edit({{ $entry->id }}"><i class="fas fa-edit"></i></button>
+                        <button wire:click="delete({{ $entry->id }})"><i class="fa-solid fa-trash"></i></button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
