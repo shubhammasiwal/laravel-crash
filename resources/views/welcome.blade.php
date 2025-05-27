@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
-    <livewire:counter :bird_count='1' />
+    <livewire:counter />
+    {{-- <livewire:bird-form /> --}}
      
     <div>
         {{-- Send Event: <livewire:send-event /> --}}
     </div>
-    <hr>
+    
     <div>
         {{-- Receive Event: <livewire:receive-event /> --}}
     </div>
